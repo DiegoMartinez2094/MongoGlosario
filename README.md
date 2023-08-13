@@ -60,3 +60,40 @@ es perfecto. Por ejemplo:
 -No es una solución adecuada para aplicaciones con transacciones complejas
 -No tiene un reemplazo para las soluciones de herencia
 -Aún es una tecnología joven comparada con las tecnologías SQL entre otras.
+
+
+# Comandos más usados de Mongodb:
+
+
+1. **Conexión y Gestión del Servidor:**
+   * `mongod`: Iniciar el servidor MongoDB.
+   * `mongo`: Conectar al servidor MongoDB y abrir la interfaz de línea de comandos de MongoDB.
+   * `show dbs`: Mostrar la lista de bases de datos.
+   * `use <database>`: Cambiar a una base de datos específica.
+2. **Operaciones en Colecciones:**
+   * `db.createCollection("nombre")`: Crear una nueva colección.
+   * `db.<collection>.insert({})`: Insertar un nuevo documento en la colección.
+   * `db.<collection>.find({})`: Realizar una consulta en la colección.
+   * `db.<collection>.update({filtro}, {$set: {campo: valor}})`: Actualizar documentos en la colección.
+   * `db.<collection>.remove({filtro})`: Eliminar documentos de la colección.
+   * `db.<collection>.count()`: Contar la cantidad de documentos en la colección.
+3. **Consultas y Operaciones:**
+   * `db.<collection>.find({filtro}, {campos})`: Realizar una consulta con filtro y proyección de campos.
+   * `db.<collection>.aggregate([pipeline])`: Realizar operaciones de agregación en la colección.
+   * `db.<collection>.distinct("campo")`: Obtener valores únicos de un campo específico.
+   * `db.<collection>.sort({campo: 1 o -1})`: Ordenar los resultados.
+4. **Índices:**
+   * `db.<collection>.createIndex({campo: 1 o -1})`: Crear un índice en un campo.
+   * `db.<collection>.getIndexes()`: Obtener la lista de índices en la colección.
+   * `db.<collection>.dropIndex({campo: 1 o -1})`: Eliminar un índice.
+5. **Réplicas:**
+   * `rs.initiate()`: Iniciar una configuración de réplica.
+   * `rs.add("hostname:puerto")`: Agregar un miembro a la configuración de réplica.
+   * `rs.status()`: Ver el estado de la configuración de réplica.
+6. **Fragmentación (Sharding):**
+   * `sh.enableSharding("base_de_datos")`: Habilitar fragmentación en una base de datos.
+   * `sh.shardCollection("<base_de_datos>.<colección>", {campo_shard: 1 o "hashed"})`: Fragmentar una colección.
+   * `sh.addShard("hostname:puerto")`: Agregar un servidor shard al clúster.
+7. **Administración:**
+   * `db.stats()`: Obtener estadísticas de la base de datos actual.
+   * `db.shutdownServer()`: Apagar el servidor de MongoDB.
